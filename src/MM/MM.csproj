@@ -5,14 +5,15 @@
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{4BE35D68-66F9-49C7-9B7E-10FFE70B20B2}</ProjectGuid>
+    <ProjectGuid>{27A932AF-D3A6-438F-BB1D-D52A756F2636}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>MM</RootNamespace>
     <AssemblyName>MM</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
     <PlatformTarget>x86</PlatformTarget>
@@ -34,11 +35,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="IrisSkin2">
+      <HintPath>..\..\..\临时\IrisSkin2.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
@@ -46,29 +46,37 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddPass.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AddPass.Designer.cs">
-      <DependentUpon>AddPass.cs</DependentUpon>
-    </Compile>
     <Compile Include="AES.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="MM.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="MM.Designer.cs">
+      <DependentUpon>MM.cs</DependentUpon>
     </Compile>
-    <Compile Include="Key.cs" />
-    <Compile Include="MP.cs" />
+    <Compile Include="MMAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MMAdd.Designer.cs">
+      <DependentUpon>MMAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MMSet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MMSet.Designer.cs">
+      <DependentUpon>MMSet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Passwds.cs" />
     <Compile Include="Password.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="AddPass.resx">
-      <DependentUpon>AddPass.cs</DependentUpon>
+    <EmbeddedResource Include="MM.resx">
+      <DependentUpon>MM.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="MMAdd.resx">
+      <DependentUpon>MMAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MMSet.resx">
+      <DependentUpon>MMSet.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -80,6 +88,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="app.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -91,13 +100,25 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="ico\37_1.ico" />
+    <None Include="ico\add.ico" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="ico\19_2.ico" />
-    <Content Include="ico\7_1.ico" />
-    <Content Include="ico\8.ico" />
-    <None Include="Resources\04.gif" />
+    <None Include="ico\key.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\program.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\delete.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\edit.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\copy.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\smallCopy.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

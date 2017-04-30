@@ -1,3 +1,4 @@
 *.exe
+*.resx
 src/MM/obj
 src/MM/bin
